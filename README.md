@@ -8,12 +8,17 @@ to mirror to like so:
 
     repo    foo-project
             RW+     =   me
-            config gitolite.mirror.simple   =   "git@github.com:miracle2k/foo-project.git"
+            config gitolite.mirror.simple.github      =   "git@github.com:nexeck/foo-project.git"
+            config gitolite.mirror.simple.bitbucket   =   "git@bitbucket.org:nexeck/foo-project.git"
+            config gitolite.mirror.simple.<what ever name>   =   "git@<what ever host>:nexeck/foo-project.git"
+            
+You can mirror to as many repositories as you want, just use different <what ever name> for them.
             
 It's also possible to mirror multiple repositories in one go:
 
     repo    @public-projects
-            config gitolite.mirror.simple   =   "git@github.com:miracle2k/REPO.git"
+            config gitolite.mirror.simple.github      =   "git@github.com:nexeck/REPO.git"
+            config gitolite.mirror.simple.bitbucket   =   "git@bitbucket.org:nexeck/REPO.git"
             
 As you can see, REPO will be replaced by the repository name. This is done 
 within the hook.
