@@ -8,7 +8,7 @@
 
 [ -z "$GL_REPO" ] && die GL_REPO not set
 
-targets=`git config --get-regex gitolite.mirror.simple\..*`
+targets=`git config --get-regex gitolite.mirror.simple\.. | sed 's/gitolite.mirror.simple.* //g'`
 [ -z "$targets" ] && exit 0
 
 for target in $targets; do
